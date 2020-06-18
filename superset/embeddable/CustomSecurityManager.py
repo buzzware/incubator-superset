@@ -2,8 +2,8 @@ from .CustomAuthDBView import CustomAuthDBView
 from .. import SupersetSecurityManager
 
 class CustomSecurityManager(SupersetSecurityManager):
-    authdbview = CustomAuthDBView
-
+    
+    # authdbview = CustomAuthDBView     # disabled for now
 
     def can_access(self, permission_name: str, view_name: str) -> bool:
         if self.appbuilder.app.config.get('DEFEAT_ALL_SECURITY'):
